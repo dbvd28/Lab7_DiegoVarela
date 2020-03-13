@@ -18,6 +18,8 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
      */
     public Lab7_DiegoV() {
         initComponents();
+        br = new barraregistrarse(espera, Barra);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -48,8 +50,36 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
         tf_generosolista = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jb_salirsolista = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
         Banda = new javax.swing.JDialog();
+        jb_salirsolista1 = new javax.swing.JButton();
+        tf_usuariobanda = new javax.swing.JTextField();
+        tf_contraseñabanda = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        tf_nombrebanda = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        tf_integrantesbanda = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        tf_generobanda = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         Usuario = new javax.swing.JDialog();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        tf_usuario = new javax.swing.JTextField();
+        tf_contraseña = new javax.swing.JTextField();
+        tf_nombre = new javax.swing.JTextField();
+        tf_edad = new javax.swing.JTextField();
+        jb_guardarusuario = new javax.swing.JButton();
+        jb_salirusuario = new javax.swing.JButton();
+        jLabel19 = new javax.swing.JLabel();
+        Barra = new javax.swing.JDialog();
+        espera = new javax.swing.JProgressBar();
+        jLabel20 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jb_inicarsesion = new javax.swing.JButton();
         jb_registrarse = new javax.swing.JButton();
@@ -119,7 +149,7 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
             .addGap(0, 300, Short.MAX_VALUE)
         );
 
-        jLabel3.setText("Uusuario:");
+        jLabel3.setText("Usuario:");
 
         jLabel4.setText("Contraseña:");
 
@@ -143,6 +173,9 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
             }
         });
 
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel14.setText("Solista");
+
         javax.swing.GroupLayout SolistaLayout = new javax.swing.GroupLayout(Solista.getContentPane());
         Solista.getContentPane().setLayout(SolistaLayout);
         SolistaLayout.setHorizontalGroup(
@@ -150,39 +183,43 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
             .addGroup(SolistaLayout.createSequentialGroup()
                 .addGroup(SolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SolistaLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(SolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(SolistaLayout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tf_usuariosolista, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(SolistaLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tf_contraseñasolista))
-                            .addGroup(SolistaLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tf_nombresolista))
-                            .addGroup(SolistaLayout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(tf_edadsolista))
-                            .addGroup(SolistaLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(tf_generosolista))))
-                    .addGroup(SolistaLayout.createSequentialGroup()
                         .addGap(76, 76, 76)
                         .addComponent(jButton1)
                         .addGap(87, 87, 87)
-                        .addComponent(jb_salirsolista)))
+                        .addComponent(jb_salirsolista))
+                    .addGroup(SolistaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(SolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel14)
+                            .addGroup(SolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(SolistaLayout.createSequentialGroup()
+                                    .addComponent(jLabel3)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tf_usuariosolista, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(SolistaLayout.createSequentialGroup()
+                                    .addComponent(jLabel4)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tf_contraseñasolista))
+                                .addGroup(SolistaLayout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tf_nombresolista))
+                                .addGroup(SolistaLayout.createSequentialGroup()
+                                    .addComponent(jLabel6)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tf_edadsolista))
+                                .addGroup(SolistaLayout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(tf_generosolista))))))
                 .addContainerGap(99, Short.MAX_VALUE))
         );
         SolistaLayout.setVerticalGroup(
             SolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SolistaLayout.createSequentialGroup()
-                .addGap(38, 38, 38)
+                .addGap(4, 4, 4)
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
                 .addGroup(SolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(tf_usuariosolista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -202,32 +239,222 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
                 .addGroup(SolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(tf_generosolista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(SolistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jb_salirsolista)))
         );
 
+        jb_salirsolista1.setText("Salir");
+        jb_salirsolista1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_salirsolista1MouseClicked(evt);
+            }
+        });
+
+        jLabel8.setText("Usuario:");
+
+        jLabel9.setText("Contraseña:");
+
+        jLabel10.setText("Nombre:");
+
+        jLabel11.setText("Integrantes:");
+
+        jButton2.setText("Guardar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        jLabel12.setText("Genero Musical:");
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel13.setText("BANDA");
+
         javax.swing.GroupLayout BandaLayout = new javax.swing.GroupLayout(Banda.getContentPane());
         Banda.getContentPane().setLayout(BandaLayout);
         BandaLayout.setHorizontalGroup(
             BandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(BandaLayout.createSequentialGroup()
+                .addGroup(BandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BandaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(BandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(BandaLayout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_usuariobanda, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(BandaLayout.createSequentialGroup()
+                                .addComponent(jLabel9)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_contraseñabanda))
+                            .addGroup(BandaLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_nombrebanda))
+                            .addGroup(BandaLayout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(tf_integrantesbanda))
+                            .addGroup(BandaLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_generobanda))))
+                    .addGroup(BandaLayout.createSequentialGroup()
+                        .addGap(76, 76, 76)
+                        .addComponent(jButton2)
+                        .addGap(87, 87, 87)
+                        .addComponent(jb_salirsolista1))
+                    .addGroup(BandaLayout.createSequentialGroup()
+                        .addGap(158, 158, 158)
+                        .addComponent(jLabel13)))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
         BandaLayout.setVerticalGroup(
             BandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(BandaLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(BandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(tf_usuariobanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(BandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(tf_contraseñabanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(BandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(tf_nombrebanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(BandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(tf_integrantesbanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(BandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(tf_generobanda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addGroup(BandaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jb_salirsolista1)))
         );
+
+        jLabel15.setText("Usauario:");
+
+        jLabel16.setText("Contraseña.");
+
+        jLabel17.setText("Nombre:");
+
+        jLabel18.setText("Edad:");
+
+        jb_guardarusuario.setText("Guardar");
+        jb_guardarusuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_guardarusuarioMouseClicked(evt);
+            }
+        });
+
+        jb_salirusuario.setText("Salir");
+        jb_salirusuario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_salirusuarioMouseClicked(evt);
+            }
+        });
+
+        jLabel19.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel19.setText("Usuario");
 
         javax.swing.GroupLayout UsuarioLayout = new javax.swing.GroupLayout(Usuario.getContentPane());
         Usuario.getContentPane().setLayout(UsuarioLayout);
         UsuarioLayout.setHorizontalGroup(
             UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(UsuarioLayout.createSequentialGroup()
+                .addGroup(UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(UsuarioLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(UsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_edad))
+                            .addGroup(UsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_nombre))
+                            .addGroup(UsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabel16)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_contraseña))
+                            .addGroup(UsuarioLayout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(tf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(UsuarioLayout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(jb_guardarusuario)
+                        .addGap(72, 72, 72)
+                        .addComponent(jb_salirusuario))
+                    .addGroup(UsuarioLayout.createSequentialGroup()
+                        .addGap(172, 172, 172)
+                        .addComponent(jLabel19)))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
         UsuarioLayout.setVerticalGroup(
             UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(UsuarioLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel19)
+                .addGap(18, 18, 18)
+                .addGroup(UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(tf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(tf_contraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(tf_edad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGroup(UsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jb_guardarusuario)
+                    .addComponent(jb_salirusuario))
+                .addGap(23, 23, 23))
+        );
+
+        espera.setMaximum(5);
+
+        jLabel20.setText("Espere mientras creamos su usuario");
+
+        javax.swing.GroupLayout BarraLayout = new javax.swing.GroupLayout(Barra.getContentPane());
+        Barra.getContentPane().setLayout(BarraLayout);
+        BarraLayout.setHorizontalGroup(
+            BarraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BarraLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(espera, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BarraLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel20)
+                .addGap(73, 73, 73))
+        );
+        BarraLayout.setVerticalGroup(
+            BarraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BarraLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(espera, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -310,29 +537,88 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
         solista temp = new solista(tf_usuariosolista.getText(), tf_contraseñasolista.getText(), tf_nombresolista.getText(), tf_generosolista.getText(),
-                 Integer.parseInt(tf_edadsolista.getText()));
+                Integer.parseInt(tf_edadsolista.getText()));
         String op = "s";
-        
         while (op.equals("s")) {
             temp.getCancion().add(
                     new canciones(JOptionPane.showInputDialog("Ingrese el nombre de la cancion"),
-                             Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la duracion de la cancion:")))
+                            Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la duracion de la cancion:")))
             );
             op = JOptionPane.showInputDialog(
                     "Desea continuar s/n");
         }
-        adminartista aa = new adminartista("./solista");
+        adminartista aa = new adminartista("./Solista.txt");
         aa.cargarArchivo();
         aa.setArtista(temp);
         aa.escribirArchivo();
-        JOptionPane.showMessageDialog(this,
-                "Artista guardado exitosamente");
+        Barra.pack();
+        Barra.setLocationRelativeTo(null);
+        Barra.setVisible(true);
+        br.start();
         tf_nombresolista.setText("");
         tf_edadsolista.setText("");
         tf_contraseñasolista.setText("");
         tf_usuariosolista.setText("");
         tf_generosolista.setText("");
+       
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jb_salirsolista1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirsolista1MouseClicked
+        // TODO add your handling code here:
+        Banda.setVisible(false);
+    }//GEN-LAST:event_jb_salirsolista1MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        // TODO add your handling code here:
+        bandas temp = new bandas(tf_usuariobanda.getText(), tf_contraseñabanda.getText(), tf_nombrebanda.getText(),
+                tf_generobanda.getText(), Integer.parseInt(tf_integrantesbanda.getText()));
+        String op = "s";
+        while (op.equals("s")) {
+            temp.getCancion().add(
+                    new canciones(JOptionPane.showInputDialog("Ingrese el nombre de la cancion"),
+                            Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la duracion de la cancion:")))
+            );
+            op = JOptionPane.showInputDialog(
+                    "Desea continuar s/n");
+        }
+        adminartista ab = new adminartista("./Bandas.txt");
+        ab.cargarArchivo();
+        ab.setArtista(temp);
+        ab.escribirArchivo();
+        Barra.pack();
+        Barra.setLocationRelativeTo(null);
+        Barra.setVisible(true);
+        br.start();
+        tf_nombrebanda.setText("");
+        tf_integrantesbanda.setText("");
+        tf_contraseñabanda.setText("");
+        tf_usuariobanda.setText("");
+        tf_generobanda.setText("");
+
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jb_guardarusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_guardarusuarioMouseClicked
+        // TODO add your handling code here:
+        Usuario temp = new Usuario(tf_usuario.getText(), tf_contraseña.getText(), tf_nombre.getText(), Integer.parseInt(tf_edad.getText()));
+        admin_usuario ab = new admin_usuario("./Usuario.txt");
+        ab.cargarArchivo();
+        ab.setUsuario(temp);
+        ab.escribirArchivo();
+        Barra.pack();
+        Barra.setLocationRelativeTo(null);
+        Barra.setVisible(true);
+        br.start();
+        tf_nombre.setText("");
+        tf_contraseña.setText("");
+        tf_usuario.setText("");
+        tf_edad.setText("");
+
+    }//GEN-LAST:event_jb_guardarusuarioMouseClicked
+
+    private void jb_salirusuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_salirusuarioMouseClicked
+        // TODO add your handling code here:
+        Usuario.setVisible(false);
+    }//GEN-LAST:event_jb_salirusuarioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -371,28 +657,57 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDialog Banda;
+    private javax.swing.JDialog Barra;
     private javax.swing.JDialog Iniciar_sesion;
     private javax.swing.JDialog Solista;
     private javax.swing.JDialog Usuario;
+    private javax.swing.JProgressBar espera;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JButton jb_artista;
     private javax.swing.JButton jb_cantante;
+    private javax.swing.JButton jb_guardarusuario;
     private javax.swing.JButton jb_inicarsesion;
     private javax.swing.JButton jb_registrarse;
     private javax.swing.JButton jb_salirsolista;
+    private javax.swing.JButton jb_salirsolista1;
+    private javax.swing.JButton jb_salirusuario;
     private javax.swing.JButton jb_usuario;
     private javax.swing.JDialog registrarse;
+    private javax.swing.JTextField tf_contraseña;
+    private javax.swing.JTextField tf_contraseñabanda;
     private javax.swing.JTextField tf_contraseñasolista;
+    private javax.swing.JTextField tf_edad;
     private javax.swing.JTextField tf_edadsolista;
+    private javax.swing.JTextField tf_generobanda;
     private javax.swing.JTextField tf_generosolista;
+    private javax.swing.JTextField tf_integrantesbanda;
+    private javax.swing.JTextField tf_nombre;
+    private javax.swing.JTextField tf_nombrebanda;
     private javax.swing.JTextField tf_nombresolista;
+    private javax.swing.JTextField tf_usuario;
+    private javax.swing.JTextField tf_usuariobanda;
     private javax.swing.JTextField tf_usuariosolista;
     // End of variables declaration//GEN-END:variables
+barraregistrarse br;
 }
