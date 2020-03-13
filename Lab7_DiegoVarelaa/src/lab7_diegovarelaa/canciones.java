@@ -5,13 +5,20 @@
  */
 package lab7_diegovarelaa;
 
+import java.io.Serializable;
+
 /**
  *
  * @author diego
  */
-public class canciones {
- private String nombre;
- private int duracion;
+public class canciones implements Serializable {
+
+    private String nombre;
+    private int duracion;
+    private static final long SerialVersionUID = 555L;
+
+    public canciones() {
+    }
 
     public canciones(String nombre, int duracion) {
         this.nombre = nombre;
@@ -36,7 +43,7 @@ public class canciones {
 
     @Override
     public String toString() {
-        return "canciones" + nombre;
+        return  nombre;
     }
- 
+
 }

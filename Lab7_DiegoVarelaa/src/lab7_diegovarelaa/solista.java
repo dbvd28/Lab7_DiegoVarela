@@ -12,7 +12,6 @@ package lab7_diegovarelaa;
 public class solista extends Artista {
 
     private int edad;
-
     public solista(String usuario, String contraseña, String nombre, String genero,
              int edad) {
         super(usuario, contraseña, nombre, genero);

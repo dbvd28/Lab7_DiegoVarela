@@ -6,6 +6,7 @@
 package lab7_diegovarelaa;
 
 import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 
 /**
@@ -62,6 +63,7 @@ public class barraregistrarse extends Thread {
                 }
             }
         }
+        JOptionPane.showMessageDialog(null, "Creado con exito");
         ventana.setVisible(false);
     }
 }

@@ -17,7 +17,7 @@ import java.util.ArrayList;
  *
  * @author diego
  */
-public class admin_usuario {
+public class admin_usuario  {
      private ArrayList<Usuario> listaUsuario = new ArrayList();
     private File archivo = null;
 

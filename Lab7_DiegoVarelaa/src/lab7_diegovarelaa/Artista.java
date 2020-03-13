@@ -5,18 +5,21 @@
  */
 package lab7_diegovarelaa;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author diego
  */
-public class Artista {
+public class Artista implements Serializable {
+
     private String usuario;
     private String contraseña;
     private String nombre;
     private String genero;
-    private ArrayList <canciones> cancion=new ArrayList();
+    private ArrayList<canciones> cancion = new ArrayList();
+    private static final long SerialVersionUID = 555L;
 
     public Artista(String usuario, String contraseña, String nombre, String genero) {
         this.usuario = usuario;
@@ -69,5 +72,5 @@ public class Artista {
     public String toString() {
         return "Artista{" + "nombre=" + nombre + ", genero=" + genero + '}';
     }
-    
+
 }
