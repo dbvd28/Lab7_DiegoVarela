@@ -23,7 +23,8 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
         br = new barraregistrarse(espera, Barra);
         setLocationRelativeTo(null);
         ba=new barraadmin(barraev, barraevento);
-        
+        hs=new hiloseguir(barraseguir, seguiart);
+    ha=new hiloagregar(barracancion, barradecancion);
     }
 
     /**
@@ -115,9 +116,19 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jl_artistasseguidos = new javax.swing.JList<>();
         jb_seguiartista = new javax.swing.JButton();
+        jLabel34 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         barraevento = new javax.swing.JDialog();
         barraev = new javax.swing.JProgressBar();
         jLabel30 = new javax.swing.JLabel();
+        barradecancion = new javax.swing.JDialog();
+        barracancion = new javax.swing.JProgressBar();
+        jLabel35 = new javax.swing.JLabel();
+        seguiart = new javax.swing.JDialog();
+        barraseguir = new javax.swing.JProgressBar();
+        jLabel36 = new javax.swing.JLabel();
+        jDialog1 = new javax.swing.JDialog();
         jLabel1 = new javax.swing.JLabel();
         jb_inicarsesion = new javax.swing.JButton();
         jb_registrarse = new javax.swing.JButton();
@@ -667,6 +678,11 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
             }
         });
 
+        jLabel34.setText("Eventos");
+
+        jList1.setModel(new DefaultListModel());
+        jScrollPane1.setViewportView(jList1);
+
         javax.swing.GroupLayout sesionusuLayout = new javax.swing.GroupLayout(sesionusu.getContentPane());
         sesionusu.getContentPane().setLayout(sesionusuLayout);
         sesionusuLayout.setHorizontalGroup(
@@ -689,9 +705,15 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
                                 .addComponent(jb_seguiartista)))
                         .addGap(56, 56, 56)
                         .addGroup(sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(sesionusuLayout.createSequentialGroup()
+                                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel34))
+                            .addGroup(sesionusuLayout.createSequentialGroup()
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(76, 76, 76))
         );
         sesionusuLayout.setVerticalGroup(
             sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -701,14 +723,17 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(jLabel33))
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel34))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(sesionusuLayout.createSequentialGroup()
-                        .addComponent(cb_artista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jb_seguiartista))
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(sesionusuLayout.createSequentialGroup()
+                            .addComponent(cb_artista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jb_seguiartista))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
 
@@ -733,6 +758,71 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(barraev, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54))
+        );
+
+        barracancion.setMaximum(3);
+
+        jLabel35.setText("Espere mientras agregamos la cancion");
+
+        javax.swing.GroupLayout barradecancionLayout = new javax.swing.GroupLayout(barradecancion.getContentPane());
+        barradecancion.getContentPane().setLayout(barradecancionLayout);
+        barradecancionLayout.setHorizontalGroup(
+            barradecancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(barradecancionLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(barracancion, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barradecancionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel35)
+                .addGap(73, 73, 73))
+        );
+        barradecancionLayout.setVerticalGroup(
+            barradecancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(barradecancionLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(barracancion, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        barraseguir.setMaximum(4);
+
+        jLabel36.setText("Espere mientras realizamos la accion");
+
+        javax.swing.GroupLayout seguiartLayout = new javax.swing.GroupLayout(seguiart.getContentPane());
+        seguiart.getContentPane().setLayout(seguiartLayout);
+        seguiartLayout.setHorizontalGroup(
+            seguiartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(seguiartLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(barraseguir, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seguiartLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel36)
+                .addGap(73, 73, 73))
+        );
+        seguiartLayout.setVerticalGroup(
+            seguiartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(seguiartLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel36, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(barraseguir, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -949,6 +1039,7 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
         ev.getSetlist().add((canciones)o);
         DefaultListModel modelo = (DefaultListModel) jl_eventocanciones.getModel();
         modelo.addElement(o);
+        ha.start();
         jl_eventocanciones.setModel(modelo);
         cb_canciones.setModel(model);
     }//GEN-LAST:event_jb_agregarMouseClicked
@@ -956,7 +1047,9 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private void jb_creareventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_creareventoMouseClicked
         // TODO add your handling code here:
         Evento ev=new Evento(jDateChooser1.getDate().toString(),tf_ciudad.getText(),tf_lugar.getText(),tf_cappers.getText());
+        Artista art=new Artista();
         adminevento ae=new adminevento("./Evento");
+        art.getEventos().add(ev);
         ae.cargarArchivo();
         ae.setevento(ev);
         ae.escribirArchivo();
@@ -972,6 +1065,7 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
         u.getListaartistfav().add((Artista)o);
         DefaultListModel modelo = (DefaultListModel) jl_artistasseguidos.getModel();
         modelo.addElement(o);
+        hs.start();
         jl_artistasseguidos.setModel(modelo);
         cb_artista.setModel(model);
     }//GEN-LAST:event_jb_seguiartistaMouseClicked
@@ -1017,8 +1111,11 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private javax.swing.JDialog Iniciar_sesion;
     private javax.swing.JDialog Solista;
     private javax.swing.JDialog Usuario;
+    private javax.swing.JProgressBar barracancion;
+    private javax.swing.JDialog barradecancion;
     private javax.swing.JProgressBar barraev;
     private javax.swing.JDialog barraevento;
+    private javax.swing.JProgressBar barraseguir;
     private javax.swing.JComboBox<String> cb_artista;
     private javax.swing.JComboBox<String> cb_canciones;
     private javax.swing.JProgressBar espera;
@@ -1026,6 +1123,7 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private com.toedter.calendar.JDateChooser jDateChooser1;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1053,12 +1151,17 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton jb_agregar;
@@ -1078,6 +1181,7 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private javax.swing.JList<String> jl_eventocanciones;
     private javax.swing.JPasswordField pf_contra;
     private javax.swing.JDialog registrarse;
+    private javax.swing.JDialog seguiart;
     private javax.swing.JDialog sesionartista;
     private javax.swing.JDialog sesionusu;
     private javax.swing.JTextField tf_cappers;
@@ -1101,4 +1205,6 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 barraregistrarse br;
 barraadmin ba;
+hiloagregar ha;
+hiloseguir hs;
 }
