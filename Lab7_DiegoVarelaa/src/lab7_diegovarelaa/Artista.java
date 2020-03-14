@@ -19,6 +19,7 @@ public class Artista implements Serializable {
     private String nombre;
     private String genero;
     private ArrayList<canciones> cancion = new ArrayList();
+    private ArrayList <Evento> eventos=new ArrayList();
     private static final long SerialVersionUID = 555L;
 
     public Artista(String usuario, String contraseña, String nombre, String genero) {

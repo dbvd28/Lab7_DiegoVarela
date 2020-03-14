@@ -22,11 +22,30 @@ public class Usuario implements Serializable {
     private ArrayList<Evento> listaevento = new ArrayList();
     private ArrayList<Artista> listaartistfav = new ArrayList();
 
+    public Usuario() {
+    }
+
     public Usuario(String usuario, String contraseña, String nombre, int edad) {
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.nombre = nombre;
         this.edad = edad;
+    }
+
+    public ArrayList<Evento> getListaevento() {
+        return listaevento;
+    }
+
+    public void setListaevento(ArrayList<Evento> listaevento) {
+        this.listaevento = listaevento;
+    }
+
+    public ArrayList<Artista> getListaartistfav() {
+        return listaartistfav;
+    }
+
+    public void setListaartistfav(ArrayList<Artista> listaartistfav) {
+        this.listaartistfav = listaartistfav;
     }
 
     public String getUsuario() {

@@ -22,6 +22,8 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
         initComponents();
         br = new barraregistrarse(espera, Barra);
         setLocationRelativeTo(null);
+        ba=new barraadmin(barraev, barraevento);
+        
     }
 
     /**
@@ -95,16 +97,27 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        tf_lugar = new javax.swing.JTextField();
+        tf_ciudad = new javax.swing.JTextField();
+        tf_cappers = new javax.swing.JTextField();
         jb_agregar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jl_eventocanciones = new javax.swing.JList<>();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         cb_canciones = new javax.swing.JComboBox<>();
+        jb_crearevento = new javax.swing.JButton();
         sesionusu = new javax.swing.JDialog();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        cb_artista = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jl_artistasseguidos = new javax.swing.JList<>();
+        jb_seguiartista = new javax.swing.JButton();
+        barraevento = new javax.swing.JDialog();
+        barraev = new javax.swing.JProgressBar();
+        jLabel30 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jb_inicarsesion = new javax.swing.JButton();
         jb_registrarse = new javax.swing.JButton();
@@ -545,6 +558,13 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
 
         jLabel29.setText("Para el evento ");
 
+        jb_crearevento.setText("Crear Evento");
+        jb_crearevento.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_creareventoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout sesionartistaLayout = new javax.swing.GroupLayout(sesionartista.getContentPane());
         sesionartista.getContentPane().setLayout(sesionartistaLayout);
         sesionartistaLayout.setHorizontalGroup(
@@ -563,10 +583,10 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
                             .addComponent(jLabel27))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(sesionartistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                            .addComponent(jTextField2)
+                            .addComponent(tf_cappers, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                            .addComponent(tf_ciudad)
                             .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1))
+                            .addComponent(tf_lugar))
                         .addGroup(sesionartistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sesionartistaLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -583,6 +603,10 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29))
                 .addGap(32, 32, 32))
+            .addGroup(sesionartistaLayout.createSequentialGroup()
+                .addGap(236, 236, 236)
+                .addComponent(jb_crearevento)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sesionartistaLayout.setVerticalGroup(
             sesionartistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -599,16 +623,16 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(sesionartistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel25)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tf_lugar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(sesionartistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel26)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jb_agregar))
                         .addGap(18, 18, 18)
                         .addGroup(sesionartistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel27)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(tf_cappers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(sesionartistaLayout.createSequentialGroup()
                         .addGap(17, 17, 17)
                         .addGroup(sesionartistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -619,18 +643,96 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, sesionartistaLayout.createSequentialGroup()
                         .addComponent(cb_canciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(119, 119, 119)))
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addGap(39, 39, 39)
+                .addComponent(jb_crearevento)
+                .addContainerGap(82, Short.MAX_VALUE))
         );
+
+        jLabel31.setFont(new java.awt.Font("Times New Roman", 3, 24)); // NOI18N
+        jLabel31.setText("Bienvenido!");
+
+        jLabel32.setText("Artistas");
+
+        jLabel33.setText("Artistas seguidos");
+
+        cb_artista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jl_artistasseguidos.setModel(new DefaultListModel());
+        jScrollPane3.setViewportView(jl_artistasseguidos);
+
+        jb_seguiartista.setText("Seguir al artista");
+        jb_seguiartista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_seguiartistaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout sesionusuLayout = new javax.swing.GroupLayout(sesionusu.getContentPane());
         sesionusu.getContentPane().setLayout(sesionusuLayout);
         sesionusuLayout.setHorizontalGroup(
             sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(sesionusuLayout.createSequentialGroup()
+                .addGroup(sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(sesionusuLayout.createSequentialGroup()
+                        .addGap(128, 128, 128)
+                        .addComponent(jLabel31))
+                    .addGroup(sesionusuLayout.createSequentialGroup()
+                        .addGroup(sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(sesionusuLayout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(jLabel32))
+                            .addGroup(sesionusuLayout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(cb_artista, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(sesionusuLayout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(jb_seguiartista)))
+                        .addGap(56, 56, 56)
+                        .addGroup(sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sesionusuLayout.setVerticalGroup(
             sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(sesionusuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel32)
+                    .addComponent(jLabel33))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(sesionusuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(sesionusuLayout.createSequentialGroup()
+                        .addComponent(cb_artista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jb_seguiartista))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(75, Short.MAX_VALUE))
+        );
+
+        jLabel30.setText("Espere mientras creamos su evento porfavor");
+
+        javax.swing.GroupLayout barraeventoLayout = new javax.swing.GroupLayout(barraevento.getContentPane());
+        barraevento.getContentPane().setLayout(barraeventoLayout);
+        barraeventoLayout.setHorizontalGroup(
+            barraeventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(barraeventoLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(barraeventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel30)
+                    .addComponent(barraev, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        barraeventoLayout.setVerticalGroup(
+            barraeventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, barraeventoLayout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addComponent(jLabel30)
+                .addGap(18, 18, 18)
+                .addComponent(barraev, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -810,6 +912,9 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
         for (Usuario u : ab.getListaUsuario()) {
             if (u.getUsuario().equals(tf_usua.getText()) && u.getContraseña().equals(pf_contra.getText())) {
                 JOptionPane.showMessageDialog(null, "Bienvenido " + u.getNombre());
+                DefaultComboBoxModel model=(DefaultComboBoxModel) cb_artista.getModel();
+                model.addElement(aa.getListaArtista());
+                cb_artista.setModel(model);
                 sesionusu.pack();
                 sesionusu.setLocationRelativeTo(null);
                 sesionusu.setVisible(true);
@@ -847,6 +952,29 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
         jl_eventocanciones.setModel(modelo);
         cb_canciones.setModel(model);
     }//GEN-LAST:event_jb_agregarMouseClicked
+
+    private void jb_creareventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_creareventoMouseClicked
+        // TODO add your handling code here:
+        Evento ev=new Evento(jDateChooser1.getDate().toString(),tf_ciudad.getText(),tf_lugar.getText(),tf_cappers.getText());
+        adminevento ae=new adminevento("./Evento");
+        ae.cargarArchivo();
+        ae.setevento(ev);
+        ae.escribirArchivo();
+        ba.start();
+    }//GEN-LAST:event_jb_creareventoMouseClicked
+
+    private void jb_seguiartistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_seguiartistaMouseClicked
+        // TODO add your handling code here:
+        Object o=new Object();
+        Usuario u= new Usuario();
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cb_artista.getModel();
+        o = model.getSelectedItem();
+        u.getListaartistfav().add((Artista)o);
+        DefaultListModel modelo = (DefaultListModel) jl_artistasseguidos.getModel();
+        modelo.addElement(o);
+        jl_artistasseguidos.setModel(modelo);
+        cb_artista.setModel(model);
+    }//GEN-LAST:event_jb_seguiartistaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -889,6 +1017,9 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private javax.swing.JDialog Iniciar_sesion;
     private javax.swing.JDialog Solista;
     private javax.swing.JDialog Usuario;
+    private javax.swing.JProgressBar barraev;
+    private javax.swing.JDialog barraevento;
+    private javax.swing.JComboBox<String> cb_artista;
     private javax.swing.JComboBox<String> cb_canciones;
     private javax.swing.JProgressBar espera;
     private javax.swing.Box.Filler filler1;
@@ -918,6 +1049,10 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -925,12 +1060,11 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton jb_agregar;
     private javax.swing.JButton jb_artista;
     private javax.swing.JButton jb_cantante;
+    private javax.swing.JButton jb_crearevento;
     private javax.swing.JButton jb_guardarusuario;
     private javax.swing.JButton jb_inicarsesion;
     private javax.swing.JButton jb_iniciarsesion;
@@ -938,12 +1072,16 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private javax.swing.JButton jb_salirsolista;
     private javax.swing.JButton jb_salirsolista1;
     private javax.swing.JButton jb_salirusuario;
+    private javax.swing.JButton jb_seguiartista;
     private javax.swing.JButton jb_usuario;
+    private javax.swing.JList<String> jl_artistasseguidos;
     private javax.swing.JList<String> jl_eventocanciones;
     private javax.swing.JPasswordField pf_contra;
     private javax.swing.JDialog registrarse;
     private javax.swing.JDialog sesionartista;
     private javax.swing.JDialog sesionusu;
+    private javax.swing.JTextField tf_cappers;
+    private javax.swing.JTextField tf_ciudad;
     private javax.swing.JTextField tf_contraseña;
     private javax.swing.JTextField tf_contraseñabanda;
     private javax.swing.JTextField tf_contraseñasolista;
@@ -952,6 +1090,7 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private javax.swing.JTextField tf_generobanda;
     private javax.swing.JTextField tf_generosolista;
     private javax.swing.JTextField tf_integrantesbanda;
+    private javax.swing.JTextField tf_lugar;
     private javax.swing.JTextField tf_nombre;
     private javax.swing.JTextField tf_nombrebanda;
     private javax.swing.JTextField tf_nombresolista;
@@ -961,4 +1100,5 @@ public class Lab7_DiegoV extends javax.swing.JFrame {
     private javax.swing.JTextField tf_usuariosolista;
     // End of variables declaration//GEN-END:variables
 barraregistrarse br;
+barraadmin ba;
 }

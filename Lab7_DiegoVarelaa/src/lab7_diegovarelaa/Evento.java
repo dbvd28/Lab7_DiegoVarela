@@ -12,11 +12,15 @@ import java.util.ArrayList;
  * @author diego
  */
 public class Evento {
+
     private String fecha;
     private String ciudad;
     private String lugar;
     private String cappersonas;
-    private ArrayList <canciones> setlist=new ArrayList();
+    private ArrayList<canciones> setlist = new ArrayList();
+
+    public Evento() {
+    }
 
     public Evento(String fecha, String ciudad, String lugar, String cappersonas) {
         this.fecha = fecha;
@@ -69,5 +73,5 @@ public class Evento {
     public String toString() {
         return "Evento{" + "fecha=" + fecha + ", lugar=" + lugar + '}';
     }
-    
+
 }
